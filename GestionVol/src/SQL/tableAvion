@@ -1,0 +1,7 @@
+CREATE TABLE Avion (
+    id SERIAL PRIMARY KEY,
+    numAvion VARCHAR(50),
+    typeAvion VARCHAR(255),
+    nbPlaces INT,
+    categorie VARCHAR(50)
+);

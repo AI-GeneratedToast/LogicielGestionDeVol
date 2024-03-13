@@ -1,0 +1,63 @@
+CREATE TABLE Vol (
+	idVol SERIAL PRIMARY KEY,
+    numVol VARCHAR(10),
+    destination VARCHAR(25),
+    dateDepart VARCHAR(10),
+	idAvion INT,
+	nbReservations INT,
+    FOREIGN KEY (idAvion) REFERENCES avion(idavion)
+	);
+
+
+
+CREATE TABLE VolBasPrix (
+    idVolBasPrix SERIAL PRIMARY KEY,
+    isRepasFourni BOOLEAN,
+    isSiegeReserve BOOLEAN,
+    isServiceBar BOOLEAN,
+    isSysDivertissement BOOLEAN,
+    isServicePayant BOOLEAN,
+    isPriseAlimentation BOOLEAN,
+    isWifi BOOLEAN,
+	idvol INT,
+	FOREIGN KEY (idVol) REFERENCES vol(idvol)
+);
+
+CREATE TABLE VolRegulier (
+    idVolRegulier SERIAL PRIMARY KEY,
+    isRepasFourni BOOLEAN,
+    isSiegeReserve BOOLEAN,
+    isServiceBar BOOLEAN,
+    isSysDivertissement BOOLEAN,
+    isServicePayant BOOLEAN,
+    isPriseAlimentation BOOLEAN,
+    isWifi BOOLEAN,
+	idvol INT,
+	FOREIGN KEY (idVol) REFERENCES vol(idvol)
+);
+
+CREATE TABLE VolCharter (
+    idVolCharter SERIAL PRIMARY KEY,
+    isRepasFourni BOOLEAN,
+    isSiegeReserve BOOLEAN,
+    isServiceBar BOOLEAN,
+    isSysDivertissement BOOLEAN,
+    isServicePayant BOOLEAN,
+    isPriseAlimentation BOOLEAN,
+    isWifi BOOLEAN,
+	idvol INT,
+	FOREIGN KEY (idVol) REFERENCES vol(idvol)
+);
+
+CREATE TABLE VolPrive (
+    idVolPrive SERIAL PRIMARY KEY,
+    isRepasFourni BOOLEAN,
+    isSiegeReserve BOOLEAN,
+    isServiceBar BOOLEAN,
+    isSysDivertissement BOOLEAN,
+    isServicePayant BOOLEAN,
+    isPriseAlimentation BOOLEAN,
+    isWifi BOOLEAN,
+	idvol INT,
+	FOREIGN KEY (idVol) REFERENCES vol(idvol)
+);
